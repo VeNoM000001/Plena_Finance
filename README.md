@@ -1,14 +1,35 @@
-# Sample Hardhat Project
+# Plena Finance Task 1
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+You have to transfer the Testnet BNB available in the contract below to your BSC address.
+Contract Address:0x439D8294CA6405e8f6E424299d84C43d7dFF19cC
 
-Try running some of the following tasks:
+```js
+pragma solidity 0.8.0;
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+contract Test{
+    function transferFunds(address _address, bytes calldata _payload) external {
+        (bool status,) = _address.delegatecall(_payload);
+        require(status, "Forwarded call failed.");
+    }
+}
 ```
-# Plena_Finance
+
+## Tech Stack
+
+- Solidity
+- Javascript
+- Ethers
+
+## Install
+
+Download the zipped directory of this project by clicking on the green button above or clone it to your machine using the following command
+
+```git
+git clone https://github.com/VeNoM000001/Plena_Finance_Task_1.git
+```
+
+After installing the project, go to the root directory of this project and hit the command below
+
+```bash
+npm i
+```
